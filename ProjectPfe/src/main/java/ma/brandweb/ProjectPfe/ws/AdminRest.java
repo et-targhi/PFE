@@ -19,6 +19,11 @@ import ma.brandweb.ProjectPfe.service.AdminService;
 public class AdminRest {
 	@Autowired
 	private AdminService adminService;
+	
+	@PostMapping("/nom/{nom}")
+	public Admin findByNom(String nom) {
+		return adminService.findByNom(nom);
+	}
 
 	@PostMapping("/")
 	public void save(@RequestBody Admin admin) {

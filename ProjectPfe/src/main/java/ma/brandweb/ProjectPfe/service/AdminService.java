@@ -13,6 +13,10 @@ public class AdminService {
 	@Autowired
 	private AdminRepository adminRepository;
 
+	public Admin findByNom(String nom) {
+		return adminRepository.findByNom(nom);
+	}
+
 	public void save(Admin admin) {
 		adminRepository.save(admin);
 	}

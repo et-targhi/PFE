@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import ma.brandweb.ProjectPfe.bean.Admin;
 
 @Repository
-public interface AdminRepository extends JpaRepository<Admin, Long>{
-	
+public interface AdminRepository extends JpaRepository<Admin, Long> {
+	public Admin findByNom(String nom);
 }
