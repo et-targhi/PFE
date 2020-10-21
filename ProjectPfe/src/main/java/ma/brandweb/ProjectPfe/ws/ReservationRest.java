@@ -21,6 +21,11 @@ import ma.brandweb.ProjectPfe.service.ReservationService;
 
 public class ReservationRest {
 	private ReservationService reservationService;
+	
+	@GetMapping("/")
+	public List<Reservation> findAll() {
+		return reservationService.findAll();
+	}
 
 	@PostMapping("/")
 	public int save(@RequestBody Reservation reservation) {

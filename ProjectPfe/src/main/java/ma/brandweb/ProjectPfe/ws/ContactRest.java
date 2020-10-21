@@ -23,6 +23,11 @@ public class ContactRest {
 	@Autowired
 	private ContactService contactService;
 
+	@DeleteMapping("/")
+	public void deleteAll() {
+		contactService.deleteAll();
+	}
+
 	@GetMapping("/reference/{reference}")
 	public Contact findByReference(@PathVariable String reference) {
 		return contactService.findByReference(reference);

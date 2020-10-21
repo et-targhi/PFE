@@ -20,7 +20,7 @@ public class Activite {
 	private String desciption;
 	private String details;
 	private String conditions;
-	private String promotion;
+	private boolean promotion;
 	private double prixPromotion;
 	private int placesDisponible;
 
@@ -93,11 +93,11 @@ public class Activite {
 		this.conditions = conditions;
 	}
 
-	public String getPromotion() {
+	public boolean isPromotion() {
 		return promotion;
 	}
 
-	public void setPromotion(String promotion) {
+	public void setPromotion(boolean promotion) {
 		this.promotion = promotion;
 	}
 
@@ -134,7 +134,7 @@ public class Activite {
 	}
 
 	public Activite(Long id, String reference, String nom, double prixBase, double prixVente, String desciption,
-			String details, String conditions, String promotion, double prixPromotion, int placesDisponible,
+			String details, String conditions, boolean promotion, double prixPromotion, int placesDisponible,
 			List<Reservation> reservations, List<Image> images) {
 		super();
 		this.id = id;

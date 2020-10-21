@@ -14,6 +14,7 @@ public class Reservation {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String reference;
+	private String message;	
 	private String nomClient;
 	private String prenomClient;
 	private String telephone;
@@ -38,6 +39,14 @@ public class Reservation {
 
 	public void setReference(String reference) {
 		this.reference = reference;
+	}
+
+	public String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public String getNomClient() {
@@ -104,10 +113,12 @@ public class Reservation {
 		this.activite = activite;
 	}
 
-	public Reservation(Long id, String nomClient, String prenomClient, String telephone, String email,
-			Date dateReservation, int nbrPersonnes, String status, Activite activite) {
+	public Reservation(Long id, String reference, String message, String nomClient, String prenomClient,
+			String telephone, String email, Date dateReservation, int nbrPersonnes, String status, Activite activite) {
 		super();
 		this.id = id;
+		this.reference = reference;
+		this.message = message;
 		this.nomClient = nomClient;
 		this.prenomClient = prenomClient;
 		this.telephone = telephone;

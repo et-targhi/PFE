@@ -11,22 +11,23 @@ import ma.brandweb.ProjectPfe.dao.ContactRepository;
 public class ContactService {
 	private ContactRepository contactRepository;
 
+	public void deleteAll() {
+		contactRepository.deleteAll();
+	}
+
 	public Contact findByReference(String reference) {
 		return contactRepository.findByReference(reference);
 	}
-
 
 	public int deleteByReference(String reference) {
 		return contactRepository.deleteByReference(reference);
 	}
 
-
 	public List<Contact> findAll() {
 		return contactRepository.findAll();
 	}
 
-
 	public void save(Contact contact) {
 		contactRepository.save(contact);
-	}	
+	}
 }
