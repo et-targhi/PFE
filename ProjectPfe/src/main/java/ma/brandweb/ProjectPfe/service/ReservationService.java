@@ -17,10 +17,6 @@ public class ReservationService {
 	@Autowired
 	private ReservationRepository reservationRepository;
 
-	public List<Reservation> findAll() {
-		return reservationRepository.findAll();
-	}
-
 	@Autowired
 	private DisponibiliteService disponibiliteService;
 
@@ -75,6 +71,10 @@ public class ReservationService {
 	@Transactional
 	public int deleteByReference(String reference) {
 		return reservationRepository.deleteByReference(reference);
+	}
+
+	public List<Reservation> findAll() {
+		return reservationRepository.findAll();
 	}
 
 }

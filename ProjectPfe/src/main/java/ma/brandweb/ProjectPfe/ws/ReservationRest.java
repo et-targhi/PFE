@@ -3,6 +3,7 @@ package ma.brandweb.ProjectPfe.ws;
 import java.util.Date;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,12 +21,8 @@ import ma.brandweb.ProjectPfe.service.ReservationService;
 @CrossOrigin(origins = "http://localhost:4200")
 
 public class ReservationRest {
+	@Autowired
 	private ReservationService reservationService;
-	
-	@GetMapping("/")
-	public List<Reservation> findAll() {
-		return reservationService.findAll();
-	}
 
 	@PostMapping("/")
 	public int save(@RequestBody Reservation reservation) {
@@ -43,8 +40,8 @@ public class ReservationRest {
 	}
 
 	@GetMapping("/nbrpersonnes/{nbrpersonnes}")
-	public List<Reservation> findByNbrPersonnes(@PathVariable int nbrPersonnes) {
-		return reservationService.findByNbrPersonnes(nbrPersonnes);
+	public List<Reservation> findByNbrPersonnes(@PathVariable int nbrpersonnes) {
+		return reservationService.findByNbrPersonnes(nbrpersonnes);
 	}
 
 	@GetMapping("/activite/reference/{reference}")
@@ -55,5 +52,10 @@ public class ReservationRest {
 	@DeleteMapping("/reference/{reference}")
 	public int deleteByReference(@PathVariable String reference) {
 		return reservationService.deleteByReference(reference);
+	}
+
+	@GetMapping("/")
+	public List<Reservation> findAll() {
+		return reservationService.findAll();
 	}
 }

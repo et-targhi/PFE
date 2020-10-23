@@ -25,8 +25,6 @@ public class Activite {
 	private int placesDisponible;
 
 	@OneToMany(mappedBy = "activite")
-	private List<Reservation> reservations;
-	@OneToMany(mappedBy = "activite")
 	private List<Image> images;
 
 	public Long getId() {
@@ -117,14 +115,6 @@ public class Activite {
 		this.placesDisponible = placesDisponible;
 	}
 
-	public List<Reservation> getReservations() {
-		return reservations;
-	}
-
-	public void setReservations(List<Reservation> reservations) {
-		this.reservations = reservations;
-	}
-
 	public List<Image> getImages() {
 		return images;
 	}
@@ -148,7 +138,6 @@ public class Activite {
 		this.promotion = promotion;
 		this.prixPromotion = prixPromotion;
 		this.placesDisponible = placesDisponible;
-		this.reservations = reservations;
 		this.images = images;
 	}
 
