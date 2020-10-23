@@ -11,20 +11,21 @@ public class Contact {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String reference;
-	public String getReference() {
-		return reference;
-	}
-	public void setReference(String reference) {
-		this.reference = reference;
-	}
 	private String nom;
 	private String email;
 	private String message;
+	
 	public Long getId() {
 		return id;
 	}
 	public void setId(Long id) {
 		this.id = id;
+	}
+	public String getReference() {
+		return reference;
+	}
+	public void setReference(String reference) {
+		this.reference = reference;
 	}
 	public String getNom() {
 		return nom;
